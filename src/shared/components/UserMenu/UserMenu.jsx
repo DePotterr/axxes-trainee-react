@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { MenuItem, TextField } from "@mui/material";
 import { USERS } from "../../constants";
+import { UserContext } from "../../providers/UserProvider";
 
 const UserMenu = () => {
-  const [selectedUser, setSelectedUser] = useState(USERS.EMPLOYEE);
-
+  const { user, setUser } = useContext(UserContext);
+  console.log(user);
   const handleChange = (event) => {
-    setSelectedUser(event.target.value);
+    setUser(event.target.value);
   };
 
   return (
     <TextField
       id="user-select"
       select
-      value={selectedUser}
+      value={user}
       onChange={handleChange}
       variant="outlined"
       size="small"

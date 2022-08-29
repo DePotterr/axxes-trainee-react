@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
-import { Container, Grid } from "@mui/material";
+import { useState, useEffect, useContext } from "react";
+import { Container, Grid, Button } from "@mui/material";
 import axios from "axios";
 
+import { UserContext } from "../../shared/providers/UserProvider";
 import MeetingList from "./MeetingList";
 
 const MeetingOverview = () => {
   const [meetings, setMeetings] = useState([]);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -16,6 +18,13 @@ const MeetingOverview = () => {
   return (
     <Container maxWidth="md">
       <Grid container spacing={2}>
+        {user === "Employee" && (
+          <Grid item>
+            <Button variant="contained" color="primary">
+              New Meeting
+            </Button>
+          </Grid>
+        )}
         <MeetingList meetings={meetings} />
       </Grid>
     </Container>
