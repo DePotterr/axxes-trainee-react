@@ -13,7 +13,7 @@ const Timer = ({ time, start }) => {
     return () => clearTimeout(timeoutID);
   }, [count, start]);
 
-  return <Typography>{count}</Typography>;
+  return <Typography>{count === 0 ? `Time's up!` : count}</Typography>;
 };
 
 Timer.propTypes = {
