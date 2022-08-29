@@ -5,7 +5,7 @@ import { UserContext } from "../../providers/UserProvider";
 
 const UserMenu = () => {
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
+
   const handleChange = (event) => {
     setUser(event.target.value);
   };
