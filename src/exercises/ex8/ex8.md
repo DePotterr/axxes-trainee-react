@@ -12,9 +12,14 @@ Add the following routes:
 - / should redirect to /meetings
 - Unknown routes should show the NotFound component
 
+- Make the navigation item in the drawer work
+- Highlight the navigation item if the current location matches the link
+
 ## Useful Links
 
 - react-router-dom documentation: https://reactrouter.com/en/main/getting-started/overview
+
+- https://mui.com/material-ui/guides/routing/#component-prop
 
 ## Extension
 
