@@ -10,8 +10,11 @@ import {
   Toolbar,
 } from "@mui/material";
 import { DrawerStyled, DrawerHeader } from "./Drawer.style";
+import { Link, useLocation } from "react-router-dom";
 
 const Drawer = ({ open, onDrawerClose }) => {
+  const location = useLocation();
+
   return (
     <DrawerStyled variant="persistent" anchor="left" open={open}>
       <Toolbar>
@@ -22,7 +25,12 @@ const Drawer = ({ open, onDrawerClose }) => {
         </DrawerHeader>
       </Toolbar>
       <List>
-        <ListItem button>
+        <ListItem
+          button
+          selected={location.pathname.includes("/meetings")}
+          component={Link}
+          to="/meetings"
+        >
           <ListItemIcon>
             <EmojiPeopleOutlinedIcon />
           </ListItemIcon>
