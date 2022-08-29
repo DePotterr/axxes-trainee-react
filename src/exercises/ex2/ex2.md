@@ -6,3 +6,10 @@ Requirements:
 
 - use the appropriate event handlers from AppBar and Drawer (hint: console errors for prop types)
 - use state
+
+TIP:
+It's common to prefix your events with `on` and your event handlers with `handle`
+
+For example:
+
+`onClick={handleClick}`
