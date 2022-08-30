@@ -8,6 +8,9 @@ import Timer from "shared/components/Timer"
 import { Button } from "@mui/material"
 import { useState } from "react"
 
+import { MEETINGS } from "shared/constants"
+import MeetingListContainer from "pages/MeetingList/MeetingListContainer"
+
 function App() {
   const [isTimerActive, setIsTimerActive] = useState(true)
   const [time, setTime] = useState(60)
@@ -17,7 +20,7 @@ function App() {
   }
 
   const setDefaultTime = () => {
-    setTime(60)
+    setTime(70)
   }
 
   return (
@@ -25,9 +28,10 @@ function App() {
       <CssBaseline />
       <Layout>
         <Label text="Welcome to the React Traineeship!"></Label>
-        <Button onClick={toggleTimer}>Toggle {isTimerActive}</Button>
+        <Button onClick={toggleTimer}>Toggle</Button>
         <Button onClick={setDefaultTime}>Reset</Button>
         <Timer time={time} start={isTimerActive}></Timer>
+        <MeetingListContainer meetings={MEETINGS}></MeetingListContainer>
       </Layout>
     </ThemeProvider>
   )

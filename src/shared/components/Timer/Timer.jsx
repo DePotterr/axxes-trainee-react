@@ -13,6 +13,10 @@ const Timer = ({ time, start }) => {
     return () => clearTimeout(timeoutID)
   }, [count, start])
 
+  useEffect(() => {
+    setCount(time)
+  }, [time])
+
   return <Typography>{count === 0 ? `Time's up!` : count}</Typography>
 }
 
