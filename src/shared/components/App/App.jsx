@@ -3,12 +3,15 @@ import { ThemeProvider } from "@mui/material/styles"
 
 import theme from "shared/css/theme"
 import Layout from "shared/components/Layout"
+import Label from "shared/components/Label"
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Layout>Welcome to the React Traineeship!</Layout>
+      <Layout>
+        <Label text="Welcome to the React Traineeship!"></Label>
+      </Layout>
     </ThemeProvider>
   )
 }
