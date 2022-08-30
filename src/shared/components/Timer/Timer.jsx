@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react"
 import { Typography } from "@mui/material"
-import { useEffect, useState } from "react"
 import { number, bool } from "prop-types"
 
 const Timer = ({ time, start }) => {
@@ -7,19 +7,13 @@ const Timer = ({ time, start }) => {
 
   useEffect(() => {
     if (!start || count === 0) return
-    const timeoutId = setTimeout(() => {
-      console.log(count)
-      setCount((prevTime) => {
-        return prevTime - 1
-      })
-    }, 1000)
 
-    return () => {
-      clearTimeout(timeoutId)
-    }
+    const timeoutID = setTimeout(() => setCount((count) => count - 1), 1000)
+
+    return () => clearTimeout(timeoutID)
   }, [count, start])
 
-  return <Typography>{count}</Typography>
+  return <Typography>{count === 0 ? `Time's up!` : count}</Typography>
 }
 
 Timer.propTypes = {
