@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { MenuItem, TextField } from "@mui/material";
-import { USERS } from "../../constants";
+import { useState } from "react"
+import { MenuItem, TextField } from "@mui/material"
+import { USERS } from "shared/constants"
 
 const UserMenu = () => {
-  const [selectedUser, setSelectedUser] = useState(USERS.EMPLOYEE);
+  const [selectedUser, setSelectedUser] = useState(USERS.EMPLOYEE)
 
   const handleChange = (event) => {
-    setSelectedUser(event.target.value);
-  };
+    setSelectedUser(event.target.value)
+  }
 
   return (
     <TextField
@@ -24,7 +24,7 @@ const UserMenu = () => {
       <MenuItem value={USERS.EMPLOYEE}>{USERS.EMPLOYEE}</MenuItem>
       <MenuItem value={USERS.ADMIN}>{USERS.ADMIN}</MenuItem>
     </TextField>
-  );
-};
+  )
+}
 
-export default UserMenu;
+export default UserMenu
