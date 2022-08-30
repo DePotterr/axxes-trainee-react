@@ -1,11 +1,10 @@
-import { string } from "prop-types";
-
+import { string } from "prop-types"
 const Label = ({ text }) => {
-  return <p>{text}</p>;
-};
+  return <div>{text}</div>
+}
 
-Label.propTypes = {
-  text: string,
-};
+Label.prototype = {
+  test: string,
+}
 
-export default Label;
+export default Label

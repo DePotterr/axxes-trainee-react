@@ -1,8 +1,8 @@
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import UserMenu from "../UserMenu";
-import { AppBarStyled, ToolbarStyled } from "./AppBar.style";
+import Typography from "@mui/material/Typography"
+import IconButton from "@mui/material/IconButton"
+import MenuIcon from "@mui/icons-material/Menu"
+import UserMenu from "shared/components/UserMenu"
+import { AppBarStyled, ToolbarStyled } from "./AppBar.style"
 
 const AppBar = ({ open, onMenuClick }) => {
   return (
@@ -25,7 +25,7 @@ const AppBar = ({ open, onMenuClick }) => {
         <UserMenu />
       </ToolbarStyled>
     </AppBarStyled>
-  );
-};
+  )
+}
 
-export default AppBar;
+export default AppBar
