@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { MenuItem, TextField } from "@mui/material";
 import { USERS } from "../../constants";
-import { UserContext } from "../../providers/UserProvider";
+import useUser from "../../hooks/useUser";
 
 const UserMenu = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useUser();
 
   const handleChange = (event) => {
     setUser(event.target.value);

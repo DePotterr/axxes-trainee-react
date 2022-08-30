@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Container, Grid, Button } from "@mui/material";
 import axios from "axios";
 
-import { UserContext } from "../../shared/providers/UserProvider";
 import MeetingList from "./MeetingList";
+import useUser from "../../shared/hooks/useUser";
 
 const MeetingOverview = () => {
   const [meetings, setMeetings] = useState([]);
-  const { user } = useContext(UserContext);
+  const { user } = useUser();
 
   useEffect(() => {
     axios
