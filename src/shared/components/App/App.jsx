@@ -6,22 +6,30 @@ import Layout from "shared/components/Layout"
 import Label from "shared/components/Label"
 import Timer from "shared/components/Timer"
 import { Button } from "@mui/material"
-import { useState } from "react"
-
-import { MEETINGS } from "shared/constants"
+import { useEffect, useState } from "react"
 import MeetingListContainer from "pages/MeetingList/MeetingListContainer"
+
+import axios from "axios"
+
+import { TIMER_VALUE } from "shared/constants"
 
 function App() {
   const [isTimerActive, setIsTimerActive] = useState(true)
-  const [time, setTime] = useState(60)
+  const [meetings, setMeetings] = useState()
 
   const toggleTimer = () => {
     setIsTimerActive((prevState) => !prevState)
   }
 
-  const setDefaultTime = () => {
-    setTime(70)
+  const fetchData = async () => {
+    const response = await axios.get(process.env.REACT_APP_API_URL)
+    console.log(response)
+    setMeetings(response.data)
   }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>
@@ -29,9 +37,8 @@ function App() {
       <Layout>
         <Label text="Welcome to the React Traineeship!"></Label>
         <Button onClick={toggleTimer}>Toggle</Button>
-        <Button onClick={setDefaultTime}>Reset</Button>
-        <Timer time={time} start={isTimerActive}></Timer>
-        <MeetingListContainer meetings={MEETINGS}></MeetingListContainer>
+        <Timer time={TIMER_VALUE} start={isTimerActive}></Timer>
+        <MeetingListContainer meetings={meetings}></MeetingListContainer>
       </Layout>
     </ThemeProvider>
   )

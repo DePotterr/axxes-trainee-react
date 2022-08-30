@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 import { number, bool } from "prop-types"
 
 const Timer = ({ time, start }) => {
@@ -13,16 +13,22 @@ const Timer = ({ time, start }) => {
     return () => clearTimeout(timeoutID)
   }, [count, start])
 
-  useEffect(() => {
+  const reset = () => {
     setCount(time)
-  }, [time])
+  }
 
-  return <Typography>{count === 0 ? `Time's up!` : count}</Typography>
+  return (
+    <Typography>
+      {count === 0 ? `Time's up!` : count}
+      <Button onClick={reset}>Reset</Button>
+    </Typography>
+  )
 }
 
 Timer.propTypes = {
   time: number,
   start: bool,
+  defaultValue: number,
 }
 
 export default Timer

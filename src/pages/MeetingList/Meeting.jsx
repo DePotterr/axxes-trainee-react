@@ -3,7 +3,7 @@ import MeetingTypography from "./MeetingTypography"
 
 const Meeting = ({ meeting }) => {
   return (
-    <Grid key={meeting.id} item xs={12}>
+    <Grid item xs={12}>
       <Paper variant="outlined" sx={{ p: 2 }}>
         <MeetingTypography
           typography={`Type: ${meeting.type}`}

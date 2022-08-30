@@ -5,8 +5,8 @@ const MeetingList = ({ meetings }) => {
   return (
     <Container maxWidth="md">
       <Grid container spacing={2}>
-        {meetings.map((meeting) => (
-          <Meeting meeting={meeting}></Meeting>
+        {meetings?.map((meeting) => (
+          <Meeting key={meeting.id} meeting={meeting}></Meeting>
         ))}
       </Grid>
     </Container>

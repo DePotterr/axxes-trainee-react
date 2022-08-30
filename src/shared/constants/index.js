@@ -55,3 +55,5 @@ export const MEETINGS = [
     invitees: ["Andrea"],
   },
 ]
+
+export const TIMER_VALUE = 60
