@@ -1,20 +1,25 @@
-import { Navigate } from 'react-router-dom'
-import MeetingOverview from '../../pages/MeetingOverview';
-import NotFound from '../../pages/NotFound';
+import { Navigate } from "react-router-dom"
+import MeetingOverview from "../../pages/MeetingOverview"
+import NewMeeting from "../../pages/NewMeeting"
+import NotFound from "../../pages/NotFound"
 
 const ROUTES = [
   {
-    path: '/meetings',
+    path: "/meetings",
     element: <MeetingOverview />,
   },
   {
-    path: '/',
-    element: <Navigate to='/meetings' replace={true} />,
+    path: "/meetings/new",
+    element: <NewMeeting />,
   },
   {
-    path: '*',
+    path: "/",
+    element: <Navigate to="/meetings" replace={true} />,
+  },
+  {
+    path: "*",
     element: <NotFound />,
   },
-];
+]
 
-export default ROUTES;
+export default ROUTES

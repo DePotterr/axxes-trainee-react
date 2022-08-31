@@ -5,35 +5,96 @@
       "type": "evolution",
       "date": "30/12/2022",
       "duration": "1",
-      "invitees": ["Bob"]
+      "invitees": [
+        "Bob"
+      ]
     },
     {
       "id": 2,
       "type": "evolution",
       "date": "30/12/2022",
       "duration": "1",
-      "invitees": ["Tom"]
+      "invitees": [
+        "Tom"
+      ]
     },
     {
       "id": 3,
       "type": "recap",
       "date": "30/12/2022",
       "duration": "1",
-      "invitees": ["Lisa", "Bert"]
+      "invitees": [
+        "Lisa",
+        "Bert"
+      ]
     },
     {
       "id": 4,
       "type": "recap",
       "date": "30/12/2022",
       "duration": "1",
-      "invitees": ["Koen"]
+      "invitees": [
+        "Koen"
+      ]
     },
     {
       "id": 5,
       "type": "followUp",
       "date": "30/12/2022",
       "duration": "1",
-      "invitees": ["Andrea"]
+      "invitees": [
+        "Andrea"
+      ]
+    },
+    {
+      "type": "followUp",
+      "date": "2022-08-11",
+      "duration": "4",
+      "invitees": [
+        "Robin",
+        "John"
+      ],
+      "id": 6
+    },
+    {
+      "type": "followUp",
+      "date": "2022-08-19",
+      "duration": "5",
+      "invitees": [
+        "Lars"
+      ],
+      "id": 7
+    },
+    {
+      "type": "followUp",
+      "date": "2022-08-04",
+      "duration": "8",
+      "invitees": [
+        "Robin"
+      ],
+      "id": 8
+    },
+    {
+      "type": "followUp",
+      "date": "2022-08-18",
+      "duration": "4",
+      "invitees": [
+        "Dirk",
+        "Robin",
+        "Fien"
+      ],
+      "id": 9
+    },
+    {
+      "type": "recap",
+      "date": "2022-08-19",
+      "duration": "5",
+      "invitees": [
+        "a",
+        "b",
+        "c"
+      ],
+      "id": 10
     }
   ]
 }
