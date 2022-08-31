@@ -1,6 +1,6 @@
-import { bool, func } from "prop-types";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined";
+import { bool, func } from "prop-types"
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"
+import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined"
 import {
   IconButton,
   ListItemIcon,
@@ -8,12 +8,12 @@ import {
   ListItemText,
   List,
   Toolbar,
-} from "@mui/material";
-import { DrawerStyled, DrawerHeader } from "./Drawer.style";
-import { Link, useLocation } from "react-router-dom";
+} from "@mui/material"
+import { DrawerStyled, DrawerHeader } from "./Drawer.style"
+import { Link, useLocation } from "react-router-dom"
 
 const Drawer = ({ open, onDrawerClose }) => {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <DrawerStyled variant="persistent" anchor="left" open={open}>
@@ -38,12 +38,12 @@ const Drawer = ({ open, onDrawerClose }) => {
         </ListItem>
       </List>
     </DrawerStyled>
-  );
-};
+  )
+}
 
 Drawer.propTypes = {
   open: bool.isRequired,
   onDrawerClose: func.isRequired,
-};
+}
 
-export default Drawer;
+export default Drawer

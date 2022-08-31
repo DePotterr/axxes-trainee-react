@@ -1,30 +1,33 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CssBaseline from "@mui/material/CssBaseline"
+import { ThemeProvider } from "@mui/material/styles"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import theme from "../../css/theme";
-import ROUTES from "../../routes";
-import Layout from "../Layout";
+import theme from "../../css/theme"
+import UserProvider from "../../providers/UserProvider"
+import ROUTES from "../../routes"
+import Layout from "../Layout"
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <CssBaseline />
-        <Layout>
-          <Routes>
-            {ROUTES.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={route.element}
-              />
-            ))}
-          </Routes>
-        </Layout>
+        <UserProvider>
+          <Layout>
+            <Routes>
+              {ROUTES.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Routes>
+          </Layout>
+        </UserProvider>
       </BrowserRouter>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

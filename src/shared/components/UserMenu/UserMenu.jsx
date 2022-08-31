@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { MenuItem, TextField } from "@mui/material";
-import { USERS } from "../../constants";
+import { MenuItem, TextField } from "@mui/material"
+import { USERS } from "../../constants"
+import useUser from "../../hooks/useUser/useUser"
 
 const UserMenu = () => {
-  const [selectedUser, setSelectedUser] = useState(USERS.EMPLOYEE);
+  const { user, setUser } = useUser()
 
   const handleChange = (event) => {
-    setSelectedUser(event.target.value);
-  };
+    setUser(event.target.value)
+  }
 
   return (
     <TextField
       id="user-select"
       select
-      value={selectedUser}
+      value={user}
       onChange={handleChange}
       variant="outlined"
       size="small"
@@ -24,7 +24,7 @@ const UserMenu = () => {
       <MenuItem value={USERS.EMPLOYEE}>{USERS.EMPLOYEE}</MenuItem>
       <MenuItem value={USERS.ADMIN}>{USERS.ADMIN}</MenuItem>
     </TextField>
-  );
-};
+  )
+}
 
-export default UserMenu;
+export default UserMenu
